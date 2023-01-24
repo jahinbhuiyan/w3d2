@@ -1,5 +1,5 @@
 class Card
-
+    attr_reader :value
     
     def initialize(value)
         @value = value
@@ -13,6 +13,13 @@ class Card
     def reveal
         @face_up = true
     end
-
+    
+    def ==(same_value)
+        if self.value == same_value
+            self.reveal
+        else
+            self.hide
+        end
+    end
     
 end
