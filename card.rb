@@ -15,13 +15,13 @@ class Card
         @face_up = true
     end
     
-    def ==(same_value)
-        if self.value == same_value
-            self.reveal
-        else
-            self.hide
-        end
-    end
+    # def ==(same_value)
+    #     if self.value == same_value
+    #         self.reveal
+    #     else
+    #         self.hide
+    #     end
+    # end
 
     def to_string
         @face_value

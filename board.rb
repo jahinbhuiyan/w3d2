@@ -66,4 +66,18 @@ class Board
         end
       end
 
+      def get_move
+        puts "enter a position with coordinates separeted with a space like 1 2"
+        guessed_pos = gets.chomp.split.map(&:to_i)
+      end
+
+      def reveal_card(pos)
+        if self[pos].face_up == false
+          self[pos].reveal
+          return true
+        else
+          puts "card already revealed."
+          return false
+        end
+      end
 end
