@@ -1,8 +1,8 @@
 class Card
-    attr_reader :value
+    attr_reader :face_value, :face_up
     
-    def initialize(value)
-        @value = value
+    def initialize
+        @face_value = ("a".."z").sample
         @face_up = false
     end
 
