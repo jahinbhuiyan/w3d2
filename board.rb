@@ -51,13 +51,19 @@ class Board
       def hidden_cards_grid
         @grid.map do |row|
             row.map do |ele|
-                ele = " "
+                " "
             end
         end
       end
 
       def won?
-        
+        temp = @grid.flatten
+        if !temp.include?(" ")
+          return true
+          puts "you won"
+        else
+          false
+        end
       end
 
 end
