@@ -24,22 +24,27 @@ class Board
       end
 
       def new_card
-        a = Card.new("a".."z".sample)
-        return [a,a]
+        arr = []
+         while arr.length < @size
+            char = ("a".."z").to_a.sample
+            
+            if !arr.include?(char)
+              arr << char 
+              arr << char 
+            end
+         end
+         arr.map { |char| Card.new(char) }.shuffle
       end
 
       def place_random_cards
-        
-        (0...@size/2).each do
-          new_c = self.new_card
-        new_c.each do |ele|
-        
-        end
-       (0...@size).each do |i|
-          row = rand(0...@grid.length)
-          col = rand(0...@grid.length)
-          pos = [row, col]
-          self[pos] = Card.new
+        new_c = self.new_card
+        (0...@grid.length).each do |row|
+          (0...@grid.length).each do |col|
+            # row = rand(0...@grid.length)
+            # col = rand(0...@grid.length)
+            pos = [row, col]
+            self[pos] = new_c.pop
+          end
         end
       end
 
