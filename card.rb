@@ -1,9 +1,10 @@
 class Card
     attr_reader :face_value, :face_up
     
-    def initialize
-        @face_value = ("a".."z").sample
+    def initialize(value)
+        @face_value = value   #("a".."z").sample
         @face_up = false
+
     end
 
     def hide
@@ -20,6 +21,10 @@ class Card
         else
             self.hide
         end
+    end
+
+    def to_string
+        @face_value
     end
     
 end

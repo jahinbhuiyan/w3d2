@@ -23,7 +23,18 @@ class Board
         @grid[row][col] = val
       end
 
+      def new_card
+        a = Card.new("a".."z".sample)
+        return [a,a]
+      end
+
       def place_random_cards
+        
+        (0...@size/2).each do
+          new_c = self.new_card
+        new_c.each do |ele|
+        
+        end
        (0...@size).each do |i|
           row = rand(0...@grid.length)
           col = rand(0...@grid.length)
